@@ -2,12 +2,17 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>カメラアプリ</title>
+    <title>カメラアプリケーション</title>
 </head>
 <body>
 
-<video id="camera-stream" width="640" height="480" autoplay></video>
-<button id="start-camera">バカシンジ、カメラを起動！</button>
+<div>
+    <video id="camera-stream" width="640" height="480" autoplay></video>
+    <button id="start-camera">カメラを起動</button>
+    <button id="take-photo">写真を撮る</button>
+    <a id="download-photo" style="display: none;">ダウンロード</a>
+    <canvas id="photo-canvas" width="640" height="480" style="display: none;"></canvas>
+</div>
 
 <script src="main.js"></script>
 </body>
