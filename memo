@@ -1,0 +1,11 @@
+Plicy:
+id="emotion-app-privacy-policy-input"
+
+スクロール：
+    <div id="emotion-app-privacy-policy-dialog" class="emotion-app-dialog-container" style="display: block;">
+        or
+    <div class="emotion-app-privacy-policy-dialog-panel"></div>
+        同意：
+<button id="emotion-app-privacy-policy-dialog-button-ok" class="emotion-app-dialog-button" type="button" disabled="">同意する</button>
+
+<div class="emotion-app-privacy-policy-dialog-panel">

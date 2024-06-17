@@ -19,71 +19,24 @@
     <a id="download-photo" style="display: none;">ダウンロード</a>
     <canvas id="photo-canvas" width="640" height="480" style="display: none;"></canvas>
 </div>
-
-<script src="main.js"></script>
 <h1>Emotion Graph App</h1>
+    <h2>before_Emotion_data</h2>
     <textarea id="json-input" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
-    <button onclick="drawGraph()">Generate Graph</button>
+    <button onclick="drawGraph('json-input','emotionGraph')">Generate Graph</button>
     
     <div id="graph-container">
         <canvas id="emotionGraph"></canvas>
     </div>
-    <script>
-        function drawGraph() {
-            const jsonInput = document.getElementById('json-input').value;
-            try {
-                const jsonData = JSON.parse(jsonInput);
-                const emotionData = {
-                    Anger: jsonData['Anger'],
-                    Disgust: jsonData['Disgust'],
-                    Fear: jsonData['Fear'],
-                    Happy: jsonData['Happy'],
-                    Neutral: jsonData['Neutral'],
-                    Sad: jsonData['Sad'],
-                    Surprise: jsonData['Surprise']
-                };
-
-                const ctx = document.getElementById('emotionGraph').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: Object.keys(emotionData),
-                        datasets: [{
-                            label: 'Emotion Values',
-                            data: Object.values(emotionData),
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(199, 199, 199, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(159, 159, 159, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            } catch (e) {
-                alert('Invalid JSON input!');
-            }
-        }
-    </script>
+    <h2>after_Emotion_data</h2>
+    <textarea id="json-input_2" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
+    <button onclick="drawGraph('json-input_2','emotionGraph_2')">Generate Graph</button>
+    
+    <div id="graph-container_2">
+        <canvas id="emotionGraph_2"></canvas>
+    </div>
+    <h2>Percentage Difference Calculator</h2>
+    <p id="result"></p>
+    <button onclick="calculateDifference()">Calculate Difference</button>
+    <script src="main.js"></script>
 </body>
 </html>
