@@ -58,7 +58,7 @@ function drawGraph(textarea_id, canvas_id) {
         console.log(jsonData.object[0].result.fe.emotion_score)
         ctx = document.getElementById(canvas_id).getContext('2d');
         new Chart(ctx, {
-            type: 'bar',
+            type: 'radar',
             data: {
                 labels: Object.keys(emotionData),
                 datasets: [{
@@ -90,9 +90,11 @@ function drawGraph(textarea_id, canvas_id) {
                     y: {
                         beginAtZero: true
                     }
-                }
-            }
+                },
+            },
         });
+        // Adjust canvas internal resolution to match the CSS size set
+
     } catch (e) {
         alert('Invalid JSON input!');
         console.log(e);

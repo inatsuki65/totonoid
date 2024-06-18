@@ -9,6 +9,21 @@
             width: 600px;
             height: 400px;
         }
+        #graph-container_2 {
+            width: 600px;
+            height: 400px;
+        }
+        .container {
+            display: flex;
+        }
+        .left {
+            flex: 1;
+            background-color: lightblue;
+        }
+        .right {
+            flex: 1;
+            background-color: lightgreen;
+        }
     </style>
 </head>
 <body>
@@ -20,19 +35,23 @@
     <canvas id="photo-canvas" width="640" height="480" style="display: none;"></canvas>
 </div>
 <h1>Emotion Graph App</h1>
-    <h2>before_Emotion_data</h2>
-    <textarea id="json-input" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
-    <button onclick="drawGraph('json-input','emotionGraph')">Generate Graph</button>
-    
-    <div id="graph-container">
-        <canvas id="emotionGraph"></canvas>
-    </div>
-    <h2>after_Emotion_data</h2>
-    <textarea id="json-input_2" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
-    <button onclick="drawGraph('json-input_2','emotionGraph_2')">Generate Graph</button>
-    
-    <div id="graph-container_2">
-        <canvas id="emotionGraph_2"></canvas>
+    <div class="container">
+        <div class="left">
+            <h2>before_Emotion_data</h2>
+            <textarea id="json-input" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
+            <button onclick="drawGraph('json-input','emotionGraph_1')">Generate Graph</button>
+            <div id="graph-container">
+                <canvas id="emotionGraph_1"></canvas>
+            </div>
+        </div>
+        <div class="right">
+            <h2>after_Emotion_data</h2>
+            <textarea id="json-input_2" rows="10" cols="50" placeholder="Enter JSON code here..."></textarea>
+            <button onclick="drawGraph('json-input_2','emotionGraph_2')">Generate Graph</button>
+            <div id="graph-container_2">
+                <canvas id="emotionGraph_2"></canvas>
+            </div>
+        </div>
     </div>
     <h2>Percentage Difference Calculator</h2>
     <p id="result"></p>
