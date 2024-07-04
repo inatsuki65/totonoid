@@ -128,3 +128,10 @@ function calculateDifference() {
         console.log(e);
     }
 };
+
+document.getElementById('shareBtn').addEventListener('click', () => {
+    const feedback = document.getElementById('result').innerText;
+    const encodedFeedback = encodeURIComponent(feedback);
+    const url = `https://twitter.com/intent/tweet?text=${encodedFeedback}`;
+    window.open(url, '_blank');
+});
